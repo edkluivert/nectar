@@ -26,13 +26,14 @@ class MyApp extends StatelessWidget {
         systemNavigationBarIconBrightness: Brightness.light,
         systemNavigationBarDividerColor: nPrimaryColor,
         statusBarIconBrightness: Brightness.dark);
-    SystemChrome.setSystemUIOverlayStyle(dark);
+   SystemChrome.setSystemUIOverlayStyle(dark);
+
     return ScreenUtilInit(
       designSize: Size(414,896),
       builder: ()=> GetMaterialApp(
         //title: 'Flutter Demo',
         theme: theme(),
-        initialRoute: AppRoutes.SPLASH,
+        initialRoute: AppRoutes.INTRO,
         getPages: AppPages.list,
         debugShowCheckedModeBanner: false,
       ),

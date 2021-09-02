@@ -2,11 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:nectar/components/primary_button.dart';
 import 'package:nectar/config/app_strings.dart';
 import 'package:nectar/config/palette.dart';
 import 'package:nectar/features/intro/components/background.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nectar/routes/app_routes.dart';
 
 class IntroScreen extends StatefulWidget{
   @override
@@ -37,7 +40,7 @@ class _IntroScreen extends State<IntroScreen>{
 
   Widget build(BuildContext context) {
 
-    SystemChrome.setEnabledSystemUIOverlays([]);
+   //SystemChrome.setEnabledSystemUIOverlays([]);
 
     return Stack(
       children: [
@@ -47,7 +50,7 @@ class _IntroScreen extends State<IntroScreen>{
           body: SafeArea(
               child: Column(
                 children: [
-                  SizedBox(height: 440.h,),
+                  Expanded(child: SizedBox(height: 440.h,)),
                   Container(
                     //color: Colors.transparent,
                     height: 450.h,
@@ -93,34 +96,12 @@ class _IntroScreen extends State<IntroScreen>{
                           ),
                         ),
                         SizedBox(height: 40.h,),
-                        SizedBox(
-                          width: 353.w,
-                          height: 67.h,
-                          child: ElevatedButton(
-                            onPressed: (){
-                              //Get.to(()=>RegisterFinalScreen());
-                            },
-                            style:  ElevatedButton.styleFrom(
-                              //elevation: 10,
-                              //shadowColor: wPrimaryColorDark,
-                              primary: nPrimaryColor,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10.r), // <-- Radius
-                              ),
-                              textStyle: GoogleFonts.montserrat(
-                                fontSize: 18.sp,
-                                color: Colors.white,
-                                fontWeight: FontWeight.w600,
-                              ),
-                            ),
-                            child: Text(
-                              "Get Started",
-                            ),
-                          ),
-                        ),
-
+                        PrimaryButton(text: "Get Started",
+                            onClick: (){
+                              Get.toNamed(AppRoutes.LOCATION);
+                            }
+                        )
                       ],
-
                     ),
                   )
                 ],
