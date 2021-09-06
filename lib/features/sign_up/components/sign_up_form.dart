@@ -7,6 +7,7 @@ import 'package:nectar/components/primary_button.dart';
 import 'package:nectar/config/palette.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nectar/features/sign_up/controller/sign_up_controller.dart';
+import 'package:nectar/routes/app_routes.dart';
 
 class SignUpForm extends StatefulWidget{
   
@@ -78,6 +79,7 @@ class _SignUpForm extends State<SignUpForm>{
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
                 // if all are valid then go to success screen
+                Get.toNamed(AppRoutes.LOGIN);
                 KeyboardUtil.hideKeyboard(context);
 
               }else{

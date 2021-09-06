@@ -1,10 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nectar/config/app_strings.dart';
 import 'package:nectar/config/palette.dart';
 import 'package:nectar/features/sign_up/components/sign_up_form.dart';
+import 'package:nectar/routes/app_routes.dart';
 
 class Body extends StatelessWidget{
   @override
@@ -32,6 +34,28 @@ class Body extends StatelessWidget{
            ),),
            SizedBox(height: 40.h,),
            SignUpForm(),
+           SizedBox(height: 25.h,),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Already have an account?',
+              style: GoogleFonts.montserrat(
+                  fontSize: 14.sp,
+                  color: nGreyTextColor,
+                  fontWeight: FontWeight.w500
+              ),),
+              GestureDetector(
+                onTap: (){
+                  Get.offAndToNamed(AppRoutes.LOGIN);
+                },
+                child: Text( ' Login', style: GoogleFonts.montserrat(
+                    fontSize: 14.sp,
+                    color: nPrimaryColor,
+                    fontWeight: FontWeight.w500
+                ),),
+              ),
+            ],
+             ),
          ],
        ),
      ),
