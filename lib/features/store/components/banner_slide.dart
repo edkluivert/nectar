@@ -7,13 +7,15 @@ class BannerSlide extends StatelessWidget {
 
   BannerModel bannerModel;
 
+
+
   @override
   Widget build(BuildContext context) {
     return Center(
       child: Padding(
         padding: EdgeInsets.only(
           //top: 32.0,
-          left: 8.0,
+          //left: 8.0,
          // right: 8.0,
         ),
         child: Container(

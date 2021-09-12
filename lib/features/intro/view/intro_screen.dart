@@ -63,26 +63,7 @@ class _IntroScreen extends State<IntroScreen>{
                         SizedBox(
                           width: 280.w,
                           height: 130.h,
-                          child: Column(
-                            children: [
-                              Text(welcomeText,
-                                style: GoogleFonts.montserrat(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 48.sp,
-                                  color: Colors.white,
-
-                                ),
-                              ),
-                              Text(" to our store",
-                                style: GoogleFonts.montserrat(
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 48.sp,
-                                  color: Colors.white,
-
-                                ),
-                              ),
-                            ],
-                          ),
+                          child: SvgPicture.asset('assets/images/welcome_text.svg')
                         ),
                         SizedBox(height: 10.h,),
                         SizedBox(
@@ -98,7 +79,7 @@ class _IntroScreen extends State<IntroScreen>{
                         SizedBox(height: 40.h,),
                         PrimaryButton(text: "Get Started",
                             onClick: (){
-                              Get.toNamed(AppRoutes.SIGN_UP);
+                              Get.toNamed(AppRoutes.HOME);
                             }
                         )
                       ],

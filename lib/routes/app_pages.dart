@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
 import 'package:nectar/features/forgot_password/bindings/forgotpassword_binding.dart';
 import 'package:nectar/features/forgot_password/view/forgotpassword_screen.dart';
+import 'package:nectar/features/grocery_details/binding/GroceryDetailBinding.dart';
+import 'package:nectar/features/grocery_details/view/grocery_screen.dart';
 import 'package:nectar/features/home/components/home_controller.dart';
 import 'package:nectar/features/home/view/home_screen.dart';
 import 'package:nectar/features/intro/view/intro_screen.dart';
@@ -13,45 +15,51 @@ import 'package:nectar/features/sign_up/view/sign_up.dart';
 
 import 'app_routes.dart';
 
+Duration get transitionDuration => const Duration(milliseconds:900);
+
 class AppPages {
   static var list = [
     GetPage(
       name: AppRoutes.HOME,
       page: () => HomeScreen(),
-      transition: Transition.leftToRight,
+      transition:Transition.rightToLeft,
+      transitionDuration: transitionDuration,
       binding: HomeBinding(),
     ),
-
     GetPage(
-      name: AppRoutes.INTRO,
-      page: () => IntroScreen(),
-      transition: Transition.leftToRight
-    ),
+        name: AppRoutes.INTRO,
+        page: () => IntroScreen(),
+        transitionDuration: transitionDuration,
+        transition: Transition.rightToLeft),
     GetPage(
         name: AppRoutes.LOCATION,
         page: () => LocationScreen(),
-        transition: Transition.leftToRight,
-        binding: LocationBinding()
-    ),
+        transition: Transition.rightToLeft,
+        binding: LocationBinding()),
     GetPage(
         name: AppRoutes.SIGN_UP,
         page: () => SignUpScreen(),
-        transition: Transition.leftToRight,
-        binding: SignUpBinding()
-    ),
-
+        transition: Transition.rightToLeft,
+        transitionDuration: transitionDuration,
+        binding: SignUpBinding()),
     GetPage(
         name: AppRoutes.LOGIN,
         page: () => LoginScreen(),
-        transition: Transition.leftToRight,
-        binding: LoginBinding()
-    ),
+        transition: Transition.rightToLeft,
+        transitionDuration: transitionDuration,
+        binding: LoginBinding()),
     GetPage(
         name: AppRoutes.FORGOT_PASSWORD,
         page: () => ForgotPasswordScreen(),
-        transition: Transition.leftToRight,
-        binding: ForgotPasswordBinding()
-    ),
-
+        transition: Transition.rightToLeft,
+        transitionDuration: transitionDuration,
+        binding: ForgotPasswordBinding()),
+    GetPage(
+        name: AppRoutes.GROCERY_DETAILS,
+        page: () => GroceryScreen(),
+        transition: Transition.rightToLeft,
+        transitionDuration: transitionDuration,
+        binding: GroceryDetailBinding(),
+       ),
   ];
 }

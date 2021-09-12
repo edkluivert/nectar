@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
 
     WidgetsFlutterBinding.ensureInitialized();
-    SystemChrome.setEnabledSystemUIOverlays(SystemUiOverlay.values);
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
+
     const SystemUiOverlayStyle dark = SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         systemNavigationBarColor: nPrimaryColor,

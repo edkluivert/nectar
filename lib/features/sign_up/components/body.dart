@@ -34,7 +34,7 @@ class Body extends StatelessWidget{
            ),),
            SizedBox(height: 40.h,),
            SignUpForm(),
-           SizedBox(height: 25.h,),
+           SizedBox(height: 50.h,),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -49,13 +49,14 @@ class Body extends StatelessWidget{
                   Get.offAndToNamed(AppRoutes.LOGIN);
                 },
                 child: Text( ' Login', style: GoogleFonts.montserrat(
-                    fontSize: 14.sp,
+                    fontSize: 15.sp,
                     color: nPrimaryColor,
                     fontWeight: FontWeight.w500
                 ),),
               ),
             ],
              ),
+           SizedBox(height: 30.h,),
          ],
        ),
      ),
