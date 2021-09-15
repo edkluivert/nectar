@@ -10,6 +10,8 @@ import 'package:nectar/features/location/bindings/location_binding.dart';
 import 'package:nectar/features/location/view/location_screen.dart';
 import 'package:nectar/features/login/bindings/login_binding.dart';
 import 'package:nectar/features/login/view/login_screen.dart';
+import 'package:nectar/features/product_list/binding/productlist_binding.dart';
+import 'package:nectar/features/product_list/view/productlist_screen.dart';
 import 'package:nectar/features/sign_up/binding/sign_up_binding.dart';
 import 'package:nectar/features/sign_up/view/sign_up.dart';
 
@@ -61,5 +63,12 @@ class AppPages {
         transitionDuration: transitionDuration,
         binding: GroceryDetailBinding(),
        ),
+    GetPage(
+      name: AppRoutes.PRODUCT_LIST,
+      page: () => ProductListScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: transitionDuration,
+      binding: ProductListBinding(),
+    ),
   ];
 }
