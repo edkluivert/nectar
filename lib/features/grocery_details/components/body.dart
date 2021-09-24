@@ -216,8 +216,8 @@ class _Body extends State<Body>{
                                 onTap: (){
                                   _controller.increment();
                                 },
-                                child: SvgPicture.asset('assets/icons/plus.svg', width: 17.w, height: 17.h,),
-
+                                child: Icon(
+                                    Icons.add, color : nPrimaryColor),
                               ),
 
                             ],
@@ -395,13 +395,13 @@ class _Body extends State<Body>{
                   ),
                   IconButton(
                     icon: Icon(
-                        _controller.hideImageNutrient.isTrue ?
+                        _controller.hideReviewDetails.isTrue ?
                         Icons.keyboard_arrow_up : Icons.keyboard_arrow_right,
                       size : 30,
                     ),
                     onPressed: () {
                       setState(() {
-                        _controller.toggleNutrientsImage();
+                        _controller.toggleReview();
                       });
                     },
                   ),
@@ -410,7 +410,7 @@ class _Body extends State<Body>{
 
             ],
           ),
-          _controller.hideImageNutrient.isTrue
+          _controller.hideReviewDetails.isTrue
               ? Center(
             child: Image.asset('assets/images/banner.png', width: 300.w,
               height: 100.h,),

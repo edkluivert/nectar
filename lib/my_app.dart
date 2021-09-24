@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:nectar/config/thema.dart';
+import 'package:nectar/features/home/components/home_controller.dart';
 import 'package:nectar/routes/app_pages.dart';
 import 'package:nectar/routes/app_routes.dart';
 
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
         theme: theme(),
         initialRoute: AppRoutes.INTRO,
         getPages: AppPages.list,
+        initialBinding: HomeBinding(),
         debugShowCheckedModeBanner: false,
       ),
     );

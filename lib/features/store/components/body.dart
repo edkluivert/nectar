@@ -154,7 +154,7 @@ class _Body extends State<Body> {
             SizedBox(height: 30.h,),
             Container(
               width: double.infinity,
-              height: 248.h,
+              height: 270.h,
               child: ListView.separated(
                 itemCount: 2,
                 separatorBuilder: (BuildContext context, int index) {
@@ -193,7 +193,7 @@ class _Body extends State<Body> {
             SizedBox(height: 24.h,),
             GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  childAspectRatio: 0.76,
+                  childAspectRatio: 0.64,
                   crossAxisCount: 2,
                   crossAxisSpacing: 15,
                   mainAxisSpacing: 15,),

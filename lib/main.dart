@@ -7,6 +7,8 @@ import 'package:nectar/features/location/bindings/location_binding.dart';
 import 'package:nectar/features/login/bindings/login_binding.dart';
 import 'package:nectar/features/product_list/binding/productlist_binding.dart';
 
+import 'features/cart/binding/cart_binding.dart';
+import 'features/filters/binding/filter_binding.dart';
 import 'features/sign_up/binding/sign_up_binding.dart';
 import 'my_app.dart';
 
@@ -19,6 +21,8 @@ void main() async {
   HomeBinding().dependencies();
   ExploreBinding().dependencies();
   ProductListBinding().dependencies();
+  FilterBinding().dependencies();
+  CartBinding().dependencies();
   runApp(MyApp());
 }
 

@@ -1,4 +1,7 @@
 import 'package:get/get.dart';
+import 'package:nectar/features/filters/binding/filter_binding.dart';
+import 'package:nectar/features/filters/controller/filter_controller.dart';
+import 'package:nectar/features/filters/view/filters_screen.dart';
 import 'package:nectar/features/forgot_password/bindings/forgotpassword_binding.dart';
 import 'package:nectar/features/forgot_password/view/forgotpassword_screen.dart';
 import 'package:nectar/features/grocery_details/binding/GroceryDetailBinding.dart';
@@ -69,6 +72,13 @@ class AppPages {
       transition: Transition.rightToLeft,
       transitionDuration: transitionDuration,
       binding: ProductListBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.FILTER,
+      page: () => FilterScreen(),
+      transition: Transition.rightToLeft,
+      transitionDuration: transitionDuration,
+       binding: FilterBinding(),
     ),
   ];
 }

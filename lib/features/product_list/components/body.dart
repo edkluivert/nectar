@@ -6,13 +6,28 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:nectar/components/store_item.dart';
 import 'package:nectar/config/palette.dart';
-import 'package:nectar/features/product_list/components/query_sheet.dart';
 import 'package:nectar/features/product_list/controller/productlist_controller.dart';
+import 'package:nectar/routes/app_routes.dart';
 
-class Body extends StatelessWidget {
+class Body extends StatefulWidget {
 
+ @override
+  _Body createState()=> _Body();
+
+}
+class _Body extends State<Body>{
   final _controller = Get.find<ProductListController>();
   var data = Get.arguments;
+
+
+  int selectedIndex = 0;
+
+
+  void changeIndex(int index){
+    setState(() {
+      selectedIndex = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,49 +71,11 @@ class Body extends StatelessWidget {
                   ),
                   Material(
                       child: InkWell(
-                        onTap: (){
-                          Get.bottomSheet(
-                            Container(
-                                height: 450.h,
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.only(
-                                        topLeft: Radius.circular(35.r),
-                                        topRight: Radius.circular(35.r))
-                                ),
-                                child:Column(
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsets.symmetric(horizontal: 25.w, vertical: 20.h),
-                                      child: Row(
-                                        crossAxisAlignment: CrossAxisAlignment.center,
-                                        children: [
-                                          GestureDetector(
-                                              onTap:(){
-                                                Get.back();
-                                              },
-                                              child: SvgPicture.asset('assets/icons/cancel.svg', width: 15.w,height: 15.h,)
-                                          ),
-                                          SizedBox(width: 130.w,),
-                                          Text("Filters", style:  GoogleFonts.montserrat(
-                                              fontSize: 20.sp,
-                                              fontWeight: FontWeight.w700,
-                                              color: nBlackTextColor
-                                          ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                )
-                            ),
-
-                            barrierColor: Colors.grey[60],
-                            isDismissible: true,
-                          );
-                        },
+                          onTap: () {
+                            Get.toNamed(AppRoutes.FILTER);
+                          },
                           child: SvgPicture.asset('assets/icons/query.svg', width: 25.w,
-                          height: 25.h,
+                            height: 25.h,
                           )
                       )
                   ),
@@ -133,4 +110,7 @@ class Body extends StatelessWidget {
       ),
     );
   }
+
+
+
 }
