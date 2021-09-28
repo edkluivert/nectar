@@ -4,11 +4,11 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:nectar/config/thema.dart';
-import 'package:nectar/features/home/components/home_controller.dart';
 import 'package:nectar/routes/app_pages.dart';
 import 'package:nectar/routes/app_routes.dart';
 
 import 'config/palette.dart';
+import 'features/home/binding/home_controller.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

@@ -14,7 +14,7 @@ class StoreItem extends StatelessWidget {
   String itemName;
   int itemWeight;
   int itemAmount;
-  double itemPrice;
+  String itemPrice;
   int id;
   int index;
 

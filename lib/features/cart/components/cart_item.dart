@@ -12,9 +12,11 @@ import 'package:nectar/features/cart/controller/cart_controller.dart';
 class CartItem extends StatelessWidget{
 
   GroceryModel groceryModel;
+  int index;
 
   CartItem({
-  required this.groceryModel
+  required this.groceryModel,
+    required this.index
 });
 
 
@@ -78,7 +80,7 @@ class CartItem extends StatelessWidget{
                                       ),
                                       child: IconButton(
                                         onPressed: (){
-                                          _controller.decrement(groceryModel);
+                                          _controller.decrement(index);
                                         },
                                           icon: Icon(
                                             Icons.remove, color : nGreyTextColor),
@@ -104,7 +106,7 @@ class CartItem extends StatelessWidget{
                                       ),
                                       child: IconButton(
                                         onPressed: (){
-                                          _controller.increment(groceryModel);
+                                          _controller.increment(index);
                                         },
                                         icon: Icon(
                                             Icons.add, color : nPrimaryColor),
@@ -129,7 +131,7 @@ class CartItem extends StatelessWidget{
                       Align(
                           alignment: Alignment.topRight,
                           child: SvgPicture.asset('assets/icons/cancel.svg')),
-                      Text("${symbolN}${groceryModel.price}",
+                      Text("$symbolN${groceryModel.amount * groceryModel.price}",
                           style : GoogleFonts.montserrat(
                               fontWeight: FontWeight.w500,
                               color: nBlackTextColor,

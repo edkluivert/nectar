@@ -6,7 +6,7 @@ import 'package:nectar/features/forgot_password/bindings/forgotpassword_binding.
 import 'package:nectar/features/forgot_password/view/forgotpassword_screen.dart';
 import 'package:nectar/features/grocery_details/binding/GroceryDetailBinding.dart';
 import 'package:nectar/features/grocery_details/view/grocery_screen.dart';
-import 'package:nectar/features/home/components/home_controller.dart';
+import 'package:nectar/features/home/binding/home_controller.dart';
 import 'package:nectar/features/home/view/home_screen.dart';
 import 'package:nectar/features/intro/view/intro_screen.dart';
 import 'package:nectar/features/location/bindings/location_binding.dart';

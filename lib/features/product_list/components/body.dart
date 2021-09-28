@@ -100,7 +100,7 @@ class _Body extends State<Body>{
                       itemName: _controller.grocery[index].name,
                       imageLink : _controller.grocery[index].img,
                       itemWeight: _controller.grocery[index].weight,
-                      itemPrice : _controller.grocery[index].price, itemAmount: _controller.grocery[index].amount,
+                      itemPrice : _controller.grocery[index].price.toString(), itemAmount: _controller.grocery[index].amount,
                       id: _controller.grocery[index].id,
                       index: index,);
                   }),

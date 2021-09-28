@@ -5,16 +5,17 @@ import 'package:flutter/material.dart';
 
 class CartController extends GetxController{
 
-  var amountOfitem = 0.obs;
- var priceOfItem = 1.obs;
+
+ double totalPrice = 0.0;
 
 
- void increment(GroceryModel groceryModel){
-   groceryModel.amount++;
+ void increment(int index){
+   grocery[index].amount++;
+   totalPrice += grocery[index].price * grocery[index].amount;
    update();
  }
-  void decrement(GroceryModel groceryModel){
-    if(groceryModel.amount <= 1){
+  void decrement(int index){
+    if(grocery[index].amount <= 1){
       Get.snackbar("Error", "Grocery can not be less than 1 item",
       icon: Icon(Icons.error_outline),
           barBlur: 20,
@@ -23,10 +24,12 @@ class CartController extends GetxController{
         duration: Duration(seconds: 2)
       );
     }else{
-      groceryModel.amount--;
+      grocery[index].amount--;
+      totalPrice -= grocery[index].price * grocery[index].amount;
       update();
     }
   }
+
 
 
   var grocery = [
