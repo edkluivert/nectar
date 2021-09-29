@@ -79,7 +79,7 @@ class _IntroScreen extends State<IntroScreen>{
                         SizedBox(height: 40.h,),
                         PrimaryButton(text: "Get Started",
                             onClick: (){
-                              Get.toNamed(AppRoutes.HOME);
+                              Get.toNamed(AppRoutes.SIGN_UP);
                             }
                         )
                       ],

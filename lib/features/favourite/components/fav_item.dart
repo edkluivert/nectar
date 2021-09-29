@@ -43,7 +43,6 @@ class FavItem extends StatelessWidget{
                 children: [
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment:MainAxisAlignment.spaceEvenly ,
                     children: [
                       Text(groceryModel.name, style : GoogleFonts.montserrat(
                           fontWeight: FontWeight.w600,
@@ -51,28 +50,38 @@ class FavItem extends StatelessWidget{
                           fontSize: 18.sp
                       )),
                       SizedBox(height: 5.h,),
-                      Text("${groceryModel.weight.toString()} pieces", style : GoogleFonts.montserrat(
+                      Text("${groceryModel.weight.toString()}", style : GoogleFonts.montserrat(
                           fontWeight: FontWeight.w400,
                           color: nGreyTextColor,
                           fontSize: 14.sp
                       )),
-                      SizedBox(height: 12.h,),
-                    ],
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text("$symbolN${groceryModel.price}",
-                          style : GoogleFonts.montserrat(
-                              fontWeight: FontWeight.w500,
-                              color: nBlackTextColor,
-                              fontSize: 18.sp
-                          )),
-                      Icon(Icons.arrow_forward_ios, color: nBlackTextColor,)
+
                     ],
                   ),
 
                 ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.only(right: 10.h),
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: SizedBox(
+                width: 120.w,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("$symbolN${groceryModel.price}",
+                        style : GoogleFonts.montserrat(
+                            fontWeight: FontWeight.w500,
+                            color: nBlackTextColor,
+                            fontSize: 18.sp
+                        )),
+                    Icon(Icons.arrow_forward_ios, color: nBlackTextColor,)
+                  ],
+                ),
               ),
             ),
           ),

@@ -249,11 +249,10 @@ class _LocationForm extends State<LocationForm>{
                    //     "This is the Getx default SnackBar",
                    //   );
                    // }
-
-
+                   Get.offAllNamed(AppRoutes.HOME);
                  }
              ),
-             SizedBox(height: 50.h,),
+             SizedBox(height: 80.h,),
            ],
          ),
        ),

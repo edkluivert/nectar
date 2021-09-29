@@ -12,6 +12,7 @@ import 'package:nectar/components/store_item.dart';
 import 'package:nectar/config/palette.dart';
 import 'package:nectar/core/model/banner_model.dart';
 import 'package:nectar/features/store/components/banner_slide.dart';
+import 'package:nectar/features/store/components/category_item.dart';
 import 'package:nectar/features/store/controller/store_controller.dart';
 import 'package:nectar/routes/app_routes.dart';
 import 'package:palette_generator/palette_generator.dart';
@@ -211,6 +212,66 @@ class _Body extends State<Body> {
 
                   );
                 }
+            ),
+            SizedBox(height: 30.h,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("Groceries", style: GoogleFonts.montserrat(
+                    fontSize: 24.sp,
+                    fontWeight: FontWeight.w500,
+                    color: nBlackTextColor
+                ),),
+                Text("See all", style: GoogleFonts.montserrat(
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.w500,
+                    color: nPrimaryColor
+                ),),
+              ],
+            ),
+            SizedBox(height: 24.h,),
+            Container(
+              width: double.infinity,
+              height: 110.h,
+              child: ListView.separated(
+                itemCount: 2,
+                separatorBuilder: (BuildContext context, int index) {
+                  return SizedBox(
+                    width: 10.w,
+                  );
+                },
+                itemBuilder: (context, index){
+                  return CategoryItem(
+                     color: _controller.colors[index],
+                     title: _controller.title[index],
+                    img: _controller.images[index],
+                  );
+                },
+                scrollDirection: Axis.horizontal,
+              ),
+            ),
+            SizedBox(height: 20.h,),
+            Container(
+              width: double.infinity,
+              height: 270.h,
+              child: ListView.separated(
+                itemCount: 2,
+                separatorBuilder: (BuildContext context, int index) {
+                  return SizedBox(
+                    width: 10.w,
+                  );
+                },
+                itemBuilder: (context, index){
+                  return StoreItem(itemName: _controller.grocery[index].name,
+                    imageLink : _controller.grocery[index].img,
+                    itemWeight: _controller.grocery[index].weight,
+                    itemPrice : _controller.grocery[index].price.toString(), itemAmount: _controller.grocery[index].amount,
+                    id: _controller.grocery[index].id,
+                    index: index,
+                  );
+                },
+                scrollDirection: Axis.horizontal,
+              ),
             ),
             SizedBox(height: 20.h,),
           ],

@@ -8,10 +8,20 @@ class CartController extends GetxController{
 
  double totalPrice = 0.0;
 
+  CartController(){
+    getTotalPrice();
+}
+
+ getTotalPrice(){
+   for(int i = 0; i < grocery.length; i++){
+     totalPrice += grocery[i].price * grocery[i].amount;
+     update();
+   }
+ }
 
  void increment(int index){
    grocery[index].amount++;
-   totalPrice += grocery[index].price * grocery[index].amount;
+   totalPrice += grocery[index].price;
    update();
  }
   void decrement(int index){
@@ -25,7 +35,7 @@ class CartController extends GetxController{
       );
     }else{
       grocery[index].amount--;
-      totalPrice -= grocery[index].price * grocery[index].amount;
+      totalPrice -= grocery[index].price;
       update();
     }
   }

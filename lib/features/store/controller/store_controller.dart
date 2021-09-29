@@ -25,6 +25,10 @@ class StoreController extends GetxController{
         weight: 5),
   ];
 
+  var title = ["Pulses", "Rice"];
+  var images = ['assets/images/pulses.png','assets/images/rice.png'];
+  var colors = [0xFFF8A44C, 0xFF53B175];
+
 
 
 }

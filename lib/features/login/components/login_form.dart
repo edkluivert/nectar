@@ -79,7 +79,7 @@ class _LoginForm extends State<LoginForm>{
                     //     "This is the Getx default SnackBar",
                     //   );
                     // }
-                    Get.toNamed(AppRoutes.HOME);
+                    Get.toNamed(AppRoutes.LOCATION);
 
 
                   }
