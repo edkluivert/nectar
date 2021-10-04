@@ -1,16 +1,19 @@
 # nectar
 
-A Grocery Online App.
+Design Credits ❤ : https://www.figma.com/@imshuvo97
 
-## Getting Started
+UI link : https://www.figma.com/file/SGuQPaTBqOJAyd4Rf4Org5/Online-Groceries-App-UI-(Community)?node-id=0%3A1
 
-This project is a starting point for a Flutter application.
+Figma design
 
-A few resources to get you started if this is your first Flutter project:
+<img align="center" src="./screenshots/Cover.png" >
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+# UI Implementation
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="./screenshots/video.gif" width="240" /> 
+
+
+
+# Libraries
+ 1. [Getx](https://pub.dev/packages/get) - Route and State management
+ 2. [Screen_util](https://pub.dev/packages/flutter_screenutil) - Screen Adaptation
